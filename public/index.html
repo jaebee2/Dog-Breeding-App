@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breeding Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse-dogs.html">Browse Dogs</a></li>
+                <li><a href="login.html" onclick="loginUser()">Login</a></li>
+                <li><a href="register.html" onclick="registerUser()">Register</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to the Dog Breeding Web App</h1>
+    </header>
+    
+    <!-- Main Content Section -->
+    <main>
+        <!-- User Registration Form (Hidden by Default) -->
+        <section id="registration-form" style="display: none;">
+            <h2>Register</h2>
+            <form>
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" required><br>
+                <label for="reg-password">Password:</label>
+                
+                <input type="file" id="dog-picture" accept="image/*" required><br>
+                <button type="button" onclick="registerUser()">Register</button>
+            </form>
+        </section>
+
+        <!-- User Login Form (Hidden by Default) -->
+        <section id="login-form" style="display: none;">
+            <h2>Login</h2>
+            <form>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required><br>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required><br>
+                <button type="button" onclick="loginUser()">Login</button>
+            </form>
+        </section>
+
+        <!-- Dog Listing Creation Form -->
+        <section id="dog-listing-form">
+            <h2>Create Dog Listing</h2>
+            <form>
+                <label for="dog-name">Dog's Name:</label>
+                <input type="text" id="dog-name" required><br>
+                <label for="breed">Breed:</label>
+                <input type="text" id="breed" required><br>
+                <label for="age">Age:</label>
+                <input type="text" id="age" required><br>
+                <input type="password" id="reg-password" required><br>
+                <label class="custom-upload-button-label" for="dog-picture">
+                    <span class="custom-upload-button">Upload Dog's Picture</span>
+                </label>
+                <input type="file" id="dog-picture" class="custom-file-input" accept="image/*" required><br>
+                
+                <label for="availability">Availability for Breeding:</label>
+                <input type="text" id="availability" required><br>
+                <button type="button" onclick="createDogListing()">Create Listing</button>
+            </form>
+        </section>
+
+        <!-- Filter Dog Listings -->
+        <section id="filter-dogs">
+            <h2>Filter Dogs by Availability</h2>
+            <label for="availability-filter">Select Availability:</label>
+            <select id="availability-filter">
+                <option value="All">All</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <button id="filter-button">Filter</button>
+        </section>
+
+        <!-- Dog Listings -->
+        <section id="dog-listings">
+            <h2>Dog Listings</h2>
+            <!-- Dog listings will be added here dynamically using JavaScript -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; jibril Dog Breeding Web App</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
